@@ -9,8 +9,8 @@ case1_egress(sg) if {
 	count(sg.IpPermissionsEgress) == 1
 	rule := sg.IpPermissionsEgress[0]
 	rule.IpProtocol == "-1"
-    not rule.ToPort
-    not rule.FromPort
+	not rule.ToPort
+	not rule.FromPort
 	count(rule.IpRanges) == 1
 	rule.IpRanges[0].CidrIp == "0.0.0.0/0"
 	count(rule.UserIdGroupPairs) == 0
@@ -76,24 +76,26 @@ case2(sg) if {
 }
 
 case3_ingress(sg) if {
-    count(sg.IpPermissionsEgress) == 1
-    rule := sg.IpPermissionsEgress[0]
-    rule.IpProtocol == "-1"
-    count(rule.IpRanges) == 1
-    rule.IpRanges[0].CidrIp == "0.0.0.0/0"
-    count(rule.UserIdGroupPairs) == 0
-    count(rule.Ipv6Ranges) == 1
-    not rule.ToPort
-    not rule.FromPort
-    rule.Ipv6Ranges[0].CidrIpv6 == "::/0"
-    count(rule.PrefixListIds) == 0
+	count(sg.IpPermissionsEgress) == 1
+	rule := sg.IpPermissionsEgress[0]
+	rule.IpProtocol == "-1"
+	count(rule.IpRanges) == 1
+	rule.IpRanges[0].CidrIp == "0.0.0.0/0"
+	count(rule.UserIdGroupPairs) == 0
+	count(rule.Ipv6Ranges) == 1
+	not rule.ToPort
+	not rule.FromPort
+	rule.Ipv6Ranges[0].CidrIpv6 == "::/0"
+	count(rule.PrefixListIds) == 0
 }
+
 case3_egress(sg) if {
-    count(sg.IpPermissions) == 0
+	count(sg.IpPermissions) == 0
 }
+
 case3(sg) if {
-    case3_ingress(sg)
-    case3_egress(sg)
+	case3_ingress(sg)
+	case3_egress(sg)
 }
 
 is_safe_sg(sg) if {
