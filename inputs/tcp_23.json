@@ -1,0 +1,13 @@
+{
+  "SecurityGroups": [
+    {
+      "IpPermissions": [
+        {
+          "IpProtocol": "tcp",
+          "FromPort": 23,
+          "ToPort": 23
+        }
+      ]
+    }
+  ]
+}

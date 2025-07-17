@@ -1,0 +1,13 @@
+{
+  "SecurityGroups": [
+    {
+      "IpPermissions": [
+        {
+          "IpProtocol": "icmp",
+          "FromPort": 1023,
+          "ToPort": 1023,
+        }
+      ]
+    }
+  ]
+}

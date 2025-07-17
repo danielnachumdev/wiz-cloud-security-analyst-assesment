@@ -1,0 +1,13 @@
+{
+  "SecurityGroups": [
+    {
+      "IpPermissions": [
+        {
+          "IpProtocol": "-1",
+          "FromPort": 2024,
+          "ToPort": 2024,
+        }
+      ]
+    }
+  ]
+}

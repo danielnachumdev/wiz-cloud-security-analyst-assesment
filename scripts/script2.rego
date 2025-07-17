@@ -9,11 +9,11 @@ safe_tcp_ports := [22, 53, 135, 443, 445, 563, 993]
 is_valid(rule) if {
 	rule.IpProtocol == "icmp"
 	rule.FromPort == rule.ToPort
-	rule.FromPort in safe_tcp_ports
 }
 
 is_valid(rule) if {
 	rule.IpProtocol == "tcp"
+    rule.FromPort in safe_tcp_ports
 }
 
 is_rule_safe(rule) if {
