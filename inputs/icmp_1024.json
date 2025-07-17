@@ -5,7 +5,7 @@
         {
           "IpProtocol": "icmp",
           "FromPort": 1024,
-          "ToPort": 1024,
+          "ToPort": 1024
         }
       ]
     }
