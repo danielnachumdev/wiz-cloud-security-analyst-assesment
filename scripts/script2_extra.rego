@@ -1,4 +1,4 @@
-package example.security_groups
+package scripts
 
 import rego.v1
 
@@ -120,13 +120,11 @@ is_safe_sg(sg) if {
 	case3(sg)
 }
 
-# At least one security group in the input must be safe
 is_safe if {
 	some sg in input.SecurityGroups
 	is_safe_sg(sg)
 }
 
-# If none are safe, the input is unsafe
 is_unsafe if {
 	not is_safe
 }
