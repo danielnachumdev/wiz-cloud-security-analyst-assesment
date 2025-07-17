@@ -1,0 +1,21 @@
+{
+  "SecurityGroups": [
+    {
+      "IpPermissions": [
+        {
+          "IpProtocol": "tcp",
+          "FromPort": 563,
+          "ToPort": 563,
+          "UserIdGroupPairs": [],
+          "IpRanges": [
+            {
+              "CidrIp": "87.70.13.254/32"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": []
+        }
+      ]
+    }
+  ]
+}
