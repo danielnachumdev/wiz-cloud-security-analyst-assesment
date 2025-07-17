@@ -7,6 +7,12 @@ OPA_PATH = r'C:\tools\OPA\opa.exe'
 
 
 class TestOPARego(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        p = Path(OPA_PATH).absolute().resolve()
+        if not p.exists():
+            raise FileNotFoundError(f"OPA not found at: {p}")
+
     def assertTestResult(self, input_file: str, expected_result: bool, policy_file: str) -> None:
         p = Path(input_file).absolute().resolve()
         if not p.exists():
@@ -32,5 +38,4 @@ class TestOPARego(unittest.TestCase):
             match_value = opa_result['result'][0]['expressions'][0]['value'].get('match', None)
             if match_value is None:
                 raise AssertionError("'match' value not found in OPA output")
-            self.assertEqual(expected_result, match_value,
-                             f"Expected {expected_result}, got {match_value}")
+            self.assertEqual(expected_result, match_value, f"Expected {expected_result}, got {match_value}")
