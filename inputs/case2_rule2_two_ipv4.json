@@ -1,0 +1,44 @@
+{
+  "SecurityGroups": [
+    {
+      "GroupId": "sg-06c63c2bffb60f5e8",
+      "IpPermissionsEgress": [],
+      "VpcId": "REDACTED",
+      "SecurityGroupArn": "REDACTED",
+      "OwnerId": "REDACTED",
+      "GroupName": "wiz-sg2",
+      "Description": "sg for wiz p2q1p2",
+      "IpPermissions": [
+        {
+          "IpProtocol": "tcp",
+          "FromPort": 993,
+          "ToPort": 993,
+          "UserIdGroupPairs": [],
+          "IpRanges": [],
+          "Ipv6Ranges": [
+            {
+              "CidrIpv6": "::/0"
+            }
+          ],
+          "PrefixListIds": []
+        },
+        {
+          "IpProtocol": "tcp",
+          "FromPort": 389,
+          "ToPort": 389,
+          "UserIdGroupPairs": [],
+          "IpRanges": [
+            {
+              "CidrIp": "0.0.0.0/0"
+            },
+            {
+              "CidrIp": "0.0.0.0/0"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": []
+        }
+      ]
+    }
+  ]
+}

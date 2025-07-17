@@ -1,0 +1,14 @@
+{
+  "SecurityGroups": [
+    {
+      "GroupId": "sg-04b5a87438c7e2bb1",
+      "IpPermissionsEgress": [],
+      "VpcId": "REDACTED",
+      "SecurityGroupArn": "REDACTED",
+      "OwnerId": "REDACTED",
+      "GroupName": "wiz-sg3",
+      "Description": "sg for wiz p2q1p3",
+      "IpPermissions": []
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "SecurityGroups": [
+    {
+      "GroupId": "sg-005c4166bbcc29433",
+      "IpPermissionsEgress": [
+        {
+          "IpProtocol": "-1",
+          "UserIdGroupPairs": [],
+          "IpRanges": [
+            {
+              "CidrIp": "0.0.0.0/0"
+            }
+          ],
+          "Ipv6Ranges": [],
+          "PrefixListIds": []
+        }
+      ],
+      "VpcId": "REDACTED",
+      "SecurityGroupArn": "REDACTED",
+      "OwnerId": "REDACTED",
+      "GroupName": "wiz-sg1",
+      "Description": "sg for wiz p2q1"
+    }
+  ]
+}
